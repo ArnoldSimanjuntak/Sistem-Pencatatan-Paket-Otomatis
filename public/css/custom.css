@@ -1,0 +1,111 @@
+/* Latar Belakang Gambar untuk Seluruh Halaman */
+body {
+    background-image: url('/images/bg_landing.png'); /* Pastikan path ini benar */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Pembungkus utama, pastikan tingginya minimal setinggi layar dan TRANSPARAN */
+.main-wrapper {
+    min-height: 100vh; /* 100vh = 100% tinggi viewport/layar */
+    background-color: transparent; /* PENTING: Dibuat transparan */
+}
+
+/* Variabel Warna Tema PLN */
+:root {
+    --pln-blue: #0073b8;
+    --pln-light-blue: #e7f5ff;
+}
+
+/* Kustomisasi Card (putih solid) */
+.card {
+    background-color: #d4f1f4; /* Warna Baby Blue */
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: transparent; /* Dibuat transparan agar mengikuti warna card */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Garis batas sedikit diperjelas */
+    font-weight: 600;
+    padding: 1rem 1.25rem;
+}
+
+/* Sisa kode styling lainnya... */
+.stats-card {
+    padding: 1.5rem; color: #fff; border-radius: 0.75rem; position: relative; overflow: hidden;
+}
+.stats-card h5 { font-size: 1rem; }
+.stats-card .stats-number { font-size: 2.25rem; font-weight: 700; }
+.stats-card .icon { font-size: 3.5rem; position: absolute; top: 1rem; right: 1.5rem; opacity: 0.2; transform: rotate(-15deg); }
+.btn-pln-primary { background-color: var(--pln-blue); border-color: var(--pln-blue); color: #fff; }
+.btn-pln-primary:hover { background-color: #005a92; border-color: #005a92; color: #fff; }
+.table-pln thead th { 
+    background-color: #189ab4; /* Warna Blue Green Anda */
+    color: #ffffff !important; /* Warna teks diubah menjadi putih agar terbaca */
+    font-weight: 600;
+    border-bottom: 2px solid #189ab4; /* Garis bawah disesuaikan */
+ }
+
+ .table-pln thead { 
+    background-color: #189ab4; /* Warna Blue Green Anda */
+    color: #ffffff; /* Warna teks diubah menjadi putih agar terbaca */
+    font-weight: 600;
+    border-bottom: 2px solid #189ab4; /* Garis bawah disesuaikan */
+ }
+ 
+.image-popup-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px); z-index: 1050; cursor: pointer; display: none; justify-content: center; align-items: center; }
+.image-popup-overlay img { max-width: 90%; max-height: 90%; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); }
+/* Navigasi Kustom */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+}
+
+.table-responsive > .card > .table {
+border-radius: 0.75rem;
+overflow: hidden; /* Penting agar radius tidak "keluar" dari batas card */
+}
+.table-responsive > .card > .table thead tr:first-child th:first-child {
+border-top-left-radius: 0.75rem;
+}
+
+.table-responsive > .card > .table thead tr:first-child th:last-child {
+border-top-right-radius: 0.75rem;
+}
+
+.table-responsive > .card > .table tbody tr:last-child td:first-child {
+border-bottom-left-radius: 0.75rem;
+}
+
+.dropdown-menu {
+    background-color: #d4f1f4; /* Warna Baby Blue */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body:not(:has(.main-wrapper)) .card {
+    background-color: #d4f1f4;
+}
+
+.card .table,
+.card .table tr,
+.card .table th,
+.card .table td {
+    background-color: transparent !important;
+}
+
+/* Mengatur ulang warna strip pada tabel agar serasi dengan latar baru */
+.card .table-striped > tbody > tr:nth-of-type(odd) > * {
+    --bs-table-accent-bg: rgba(0, 0, 0, 0.03); /* Warna strip abu-abu semi-transparan */
+}
+
+.navbar-pln {
+    background-color: #05445E;
+}

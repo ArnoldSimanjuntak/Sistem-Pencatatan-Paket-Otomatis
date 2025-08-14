@@ -1,0 +1,45 @@
+/* Aturan CSS ini hanya berlaku untuk layar dengan lebar maksimal 768px */
+@media (max-width: 768px) {
+    
+    /* Perkecil padding di area konten utama agar tidak terlalu sempit */
+    .content-with-background {
+        padding: 1rem;
+    }
+
+    /* Buat kartu statistik memenuhi lebar layar dan beri jarak */
+    .stats-card {
+        margin-bottom: 1rem !important;
+    }
+
+    /* Perkecil ukuran font pada kartu statistik */
+    .stats-card h5 {
+        font-size: 0.9rem;
+    }
+    .stats-card .stats-number {
+        font-size: 1.75rem;
+    }
+    .stats-card .icon {
+        font-size: 2.5rem;
+        opacity: 0.15;
+    }
+
+    /* Perkecil ukuran font judul utama */
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    /* Buat semua input filter di halaman history memenuhi lebar layar */
+    .form-filter-mobile .col-md-5,
+    .form-filter-mobile .col-md-3 {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    .form-filter-mobile .col-md-1 {
+        width: 100%;
+    }
+
+    /* Pastikan tabel bisa di-scroll horizontal jika tidak muat */
+    .table-responsive {
+        overflow-x: auto;
+    }
+}

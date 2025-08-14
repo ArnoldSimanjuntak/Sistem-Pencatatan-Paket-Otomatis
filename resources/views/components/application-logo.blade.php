@@ -1,0 +1,1 @@
+<img {{ $attributes }} src="{{ asset('images/logo-pln.png') }}" alt="Logo PLN" style="height: 40px;">

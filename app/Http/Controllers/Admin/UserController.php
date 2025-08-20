@@ -33,21 +33,25 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        // 1. Validasi data yang masuk
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'role' => ['required', 'string', 'in:superadmin,resepsionis'],
         ]);
 
-        User::create([
+        // 2. Buat pengguna baru
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => $request->role,
         ]);
 
-        return redirect()->route('admin.users.index')->with('success', 'Akun pengguna baru berhasil ditambahkan!');
+        // 3. Redirect kembali ke halaman daftar pengguna dengan pesan sukses
+        //    Bukan login sebagai user baru, karena Anda (Super Admin) yang membuatkannya.
+        return redirect()->route('admin.users.index')->with('success', 'Akun untuk ' . $user->name . ' berhasil ditambahkan!');
     }
 
     /**

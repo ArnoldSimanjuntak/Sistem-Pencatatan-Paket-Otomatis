@@ -11,11 +11,6 @@ use App\Http\Controllers\Admin\UserController;
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
 */
 
 // Rute untuk Dashboard Publik
@@ -28,20 +23,20 @@ Route::get('/dashboard', function () {
 
 // Grup Rute untuk Halaman Admin
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
-    // Rute Paket
+    // Rute yang bisa diakses semua admin (Paket & History)
     Route::get('/', [PaketController::class, 'index'])->name('index');
     Route::get('/paket/create', [PaketController::class, 'create'])->name('paket.create');
     Route::post('/paket', [PaketController::class, 'store'])->name('paket.store');
     Route::patch('/paket/{paket}/ambil', [PaketController::class, 'tandaiDiambil'])->name('paket.ambil');
-    
-    // Rute History
     Route::get('/history', [HistoryController::class, 'index'])->name('history.index');
 
-    // Rute Tambah Pengguna
-    Route::get('/users', [UserController::class, 'index'])->name('users.index');
-    Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
-    Route::post('/users', [UserController::class, 'store'])->name('users.store');
-    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+    // Grup Rute yang HANYA bisa diakses oleh Super Admin
+    Route::middleware('superadmin')->group(function () {
+        Route::get('/users', [UserController::class, 'index'])->name('users.index');
+        Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+        Route::post('/users', [UserController::class, 'store'])->name('users.store');
+        Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+    });
 });
 
 // Grup Rute untuk profil pengguna dari Breeze

@@ -3,7 +3,7 @@
 @section('content')
     {{-- Bagian 1: Paket di Meja Resepsionis --}}
     <div class="mb-5">
-        <h2 class="mb-3 text-white">Paket di Meja Resepsionis</h2>
+        <h2 class="mb-3">Paket di Meja Resepsionis</h2>
         <div class="card">
             <div class="card-header">Daftar Paket Belum Diambil</div>
             <div class="table-responsive">
@@ -50,7 +50,7 @@
 
     {{-- Bagian 2: Riwayat Pengambilan Paket --}}
     <div>
-        <h2 class="mb-3 text-white">Riwayat Pengambilan Paket</h2>
+        <h2 class="mb-3">Riwayat Pengambilan Paket</h2>
         <div class="card">
              <div class="card-header">Daftar Paket Sudah Diambil</div>
              <div class="table-responsive">

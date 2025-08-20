@@ -3,7 +3,7 @@
 @section('title', 'Admin - Dashboard')
 
 @section('content')
-    <h2 class="mb-4" style="font-weight: 600;">Dashboard</h2>
+    <h2 class="mb-4 fs-4" style="font-weight: 600;">Dashboard</h2>
 
     {{-- KARTU STATISTIK --}}
     <div class="row mb-4">
@@ -38,7 +38,7 @@
     @endif
     
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h4 class="mb-0">Daftar Paket di Meja Resepsionis</h4>
+        <h2 class="mb-0 fs-4" style="font-weight: 600;">Daftar Paket di Meja Resepsionis</h2>
         <a href="{{ route('admin.paket.create') }}" class="btn btn-pln-primary">
             <i class="bi bi-plus-circle me-2"></i>Tambah Paket Baru
         </a>

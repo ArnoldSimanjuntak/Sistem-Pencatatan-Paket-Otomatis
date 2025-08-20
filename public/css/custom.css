@@ -5,6 +5,8 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    position: relative;
+    background-color: #f4f6f9;
 }
 
 /* Pembungkus utama, pastikan tingginya minimal setinggi layar dan TRANSPARAN */
@@ -108,4 +110,20 @@ body:not(:has(.main-wrapper)) .card {
 
 .navbar-pln {
     background-color: #05445E;
+}
+
+body::before {
+content: "";
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: url('/images/bg_landing.png');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+filter: blur(5px);
+-webkit-filter: blur(5px);
+z-index: -1; / Letakkan di belakang konten utama */
 }

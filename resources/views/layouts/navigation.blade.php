@@ -28,6 +28,12 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a></li>
+                            
+                            {{-- LINK BARU DITAMBAHKAN DI SINI --}}
+                            @if (Auth::user()->role == 'superadmin')
+                                <li><a class="dropdown-item" href="{{ route('admin.users.index') }}">Manajemen Pengguna</a></li>
+                            @endif
+
                             <li><hr class="dropdown-divider"></li>
                             <li>
                                 <form method="POST" action="{{ route('logout') }}">

@@ -3,7 +3,7 @@
 @section('title', 'Admin - Riwayat Paket')
 
 @section('content')
-    <h2 class="mb-4" style="font-weight: 600;">Riwayat Paket</h2>
+    <h2 class="mb-4 fs-4" style="font-weight: 600;">Riwayat Paket</h2>
 
     <div class="card mb-4">
         <div class="card-header">
